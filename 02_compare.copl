@@ -1,0 +1,35 @@
+// 9
+S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+
+// 10
+S(S(Z)) is less than S(S(S(Z))) by L-SuccSucc {
+  S(Z) is less than S(S(Z)) by L-SuccSucc {
+    Z is less than S(Z) by L-Zero {};
+  };
+};
+
+// 11
+S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+
+// 12
+S(S(Z)) is less than S(S(S(S(S(Z))))) by L-Trans {
+  S(S(Z)) is less than S(S(S(S(Z)))) by L-Trans {
+    S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+    S(S(S(Z))) is less than S(S(S(S(Z)))) by L-Succ {};
+  };
+  S(S(S(S(Z)))) is less than S(S(S(S(S(Z))))) by L-Succ {};
+};
+
+// 13
+S(S(Z)) is less than S(S(S(S(S(Z))))) by L-SuccSucc {
+  S(Z) is less than S(S(S(S(Z)))) by L-SuccSucc {
+    Z is less than S(S(S(Z))) by L-Zero {};
+  };
+};
+
+// 14
+S(S(Z)) is less than S(S(S(S(S(Z))))) by L-SuccR {
+  S(S(Z)) is less than S(S(S(S(Z)))) by L-SuccR {
+    S(S(Z)) is less than S(S(S(Z))) by L-Succ {};
+  };
+};
